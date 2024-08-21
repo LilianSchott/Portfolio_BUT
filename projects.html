@@ -41,14 +41,17 @@
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             margin: 20px auto;
-            padding: 30px;
-            width: 80%;
-            max-width: 1200px;
+            padding: 15px; /* Diminution du padding */
+            width: 90%; /* Réduction de la largeur */
+            max-width: 600px; /* Limitation de la largeur maximale */
             text-align: left;
         }
+        
         .card img {
             width: 100%;
             height: auto;
+            max-height: 200px; /* Limitation de la hauteur maximale de l'image */
+            object-fit: cover; /* Pour que l'image soit bien cadrée */
             border-radius: 10px;
         }
         .card h3 {
@@ -56,10 +59,11 @@
             margin-top: 0;
         }
         .card p {
-            font-size: 1.1em;
-            margin: 15px 0;
+            font-size: 1em; /* Réduction de la taille du texte */
+            margin: 10px 0; /* Réduction des marges */
             color: #555;
         }
+
         .card a {
             text-decoration: none;
             color: #0077b6;
