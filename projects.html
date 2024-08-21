@@ -36,8 +36,7 @@
             padding: 60px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            justify-content: space-between; /* Espace entre les cartes */
         }
         .card {
             background-color: white;
@@ -45,7 +44,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             margin: 20px;
             padding: 15px;
-            flex: 1 1 calc(50% - 40px); /* Deux cartes par ligne */
+            width: calc(50% - 40px); /* Deux colonnes de cartes */
             max-width: 500px;
             box-sizing: border-box;
             text-align: left;
