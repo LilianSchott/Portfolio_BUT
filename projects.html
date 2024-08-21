@@ -35,23 +35,27 @@
         section {
             padding: 60px;
             text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centrer les cartes horizontalement */
+            gap: 20px; /* Espacement entre les cartes */
         }
         .card {
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
-            padding: 15px; /* Diminution du padding */
-            width: 90%; /* Réduction de la largeur */
-            max-width: 600px; /* Limitation de la largeur maximale */
+            margin: 20px;
+            padding: 15px;
+            width: 45%; /* Réduction de la largeur des cartes pour qu'elles puissent tenir côte à côte */
+            max-width: 500px;
             text-align: left;
         }
         
         .card img {
             width: 100%;
             height: auto;
-            max-height: 200px; /* Limitation de la hauteur maximale de l'image */
-            object-fit: cover; /* Pour que l'image soit bien cadrée */
+            max-height: 200px;
+            object-fit: cover;
             border-radius: 10px;
         }
         .card h3 {
