@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
             background-color: #f0f8ff;
             color: #333;
         }
+
         nav {
             background-color: #0077b6;
             padding: 15px 0;
@@ -20,6 +22,7 @@
             top: 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         nav a {
             color: white;
             margin: 0 20px;
@@ -29,27 +32,58 @@
             font-weight: bold;
             transition: color 0.3s;
         }
+
         nav a:hover {
             color: #90e0ef;
         }
-        section {
-            padding: 60px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between; /* Espace entre les cartes */
+
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            margin: 40px 0 20px 0;
         }
+
+        .buttons-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #005f8a;
+        }
+
+        section.cards-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 60px 20px;
+            justify-items: center;
+        }
+
         .card {
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin: 20px;
             padding: 15px;
-            width: calc(50% - 40px); /* Deux colonnes de cartes */
+            width: 100%;
             max-width: 500px;
             box-sizing: border-box;
             text-align: left;
         }
-        
+
         .card img {
             width: 100%;
             height: auto;
@@ -57,13 +91,15 @@
             object-fit: cover;
             border-radius: 10px;
         }
+
         .card h3 {
             color: #0077b6;
             margin-top: 0;
         }
+
         .card p {
-            font-size: 1em; /* Réduction de la taille du texte */
-            margin: 10px 0; /* Réduction des marges */
+            font-size: 1em;
+            margin: 10px 0;
             color: #555;
         }
 
@@ -72,26 +108,19 @@
             color: #0077b6;
             font-weight: bold;
         }
+
         .card a:hover {
             color: #0096c7;
         }
-        button {
-            background-color: #0077b6;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 20px 0;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #005f8a;
+
+        @media (max-width: 768px) {
+            section.cards-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav>
@@ -100,34 +129,48 @@
         <a href="contact.html">Coordonnées</a>
     </nav>
 
-    <section>
-        <h2>Mes Projets</h2>
+    <h2>Mes Projets</h2>
 
-        <!-- Bouton pour afficher/cacher les projets SAE 1 -->
+    <!-- Conteneur des boutons -->
+    <div class="buttons-container">
         <button onclick="toggleProjects('sae1', this)">Afficher les projets SAE 1</button>
+        <button onclick="toggleProjects('sae2', this)">Afficher les projets SAE 2</button>
+        <button onclick="toggleProjects('sae3', this)">Afficher les projets SAE 3</button>
+        <button onclick="toggleProjects('sae4', this)">Afficher les projets SAE 4</button>
+        <button onclick="toggleProjects('sae5', this)">Afficher les projets SAE 5</button>
+        <button onclick="toggleProjects('sae6', this)">Afficher les projets SAE 6 (stage)</button>
+    </div>
 
-        <!-- Carte Projet SAE 1 -->
+    <!-- Conteneur des cartes en grille -->
+    <section class="cards-container">
+        <!-- Cartes Projet SAE 1 -->
         <div class="card sae1" style="display: none;">
             <a href="projets/SAE1/JetonManquant.html">
                 <img src="assets/images/imageJetonManquant.png" alt="Projet 1">
                 <h3>Jeton manquant (SAE 1.01 - SAE 1.02)</h3>
-                <p>Technologies : Java</p>
+                <p>Technologies : Java
+                <br><br>Développement d'un jeu compétitif avec implémentation d'IA, amélioration des compétences en programmation, gestion de projet, et rédaction d'un rapport en anglais sur les stratégies IA.
+                </p>
             </a>
         </div>
 
         <div class="card sae1" style="display: none;">
-            <a href="projets/SAE1/ArchitectureOrdinateur.html"></a>
+            <a href="projets/SAE1/ArchitectureOrdinateur.html">
                 <img src="assets/images/imageArchitecture.png" alt="Projet 2">
                 <h3>Architecture d'un ordinateur (SAE 1.03)</h3>
-                <p>Technologies : Bash</p>
+                <p>Technologies : Bash
+                    <br><br>Création de configurations matérielles et logicielles selon les besoins clients, installation de systèmes sur machine virtuelle, et rédaction de rapports simplifiés pour un public non technique.
+                </p>
             </a>
         </div>
 
         <div class="card sae1" style="display: none;">
-            <a href="projets/SAE1/GestionDecharges.html">  
+            <a href="projets/SAE1/GestionDecharges.html">
                 <img src="assets/images/imageGestionDecharge.png" alt="Projet 3">
                 <h3>Site de gestion de décharges (SAE 1.04)</h3>
-                <p>Technologies : SQL, Flask, HTML</p>
+                <p>Technologies : SQL, Flask, HTML
+                    <br><br>Création d'un CRUD pour la gestion des décharges avec une base de données SQL, participation à la modélisation MCD et développement d'une application web en Flask, avec un focus sur les jointures complexes.
+                </p>
             </a>
         </div>
 
@@ -135,7 +178,9 @@
             <a href="projets/SAE1/GestionProjet.html">   
                 <img src="assets/images/imageGestionProjet.png" alt="Projet 4">
                 <h3>Gestion de projet (SAE 1.05)</h3>
-                <p>Technologies : Gantt, Pert</p>
+                <p>Technologies : Gantt, Pert
+                    <br><br>Création de la foire aux questions, gestion des ressources et permissions, rédaction du discours pour la présentation orale, avec amélioration des compétences en répartition du travail et communication efficace.
+                </p>
             </a>
         </div>
 
@@ -143,19 +188,20 @@
             <a href="projets/SAE1/DossierEconomique.html">   
                 <img src="assets/images/imageDossierEconomique.png" alt="Projet 5">
                 <h3>Dossier Économique (SAE 1.06)</h3>
-                <p>Technologies : HTML, JavaScript</p>
+                <p>Technologies : HTML, JavaScript
+                    <br><br>Comparaison économique et écologique de trois entreprises françaises du jeu vidéo à travers un rapport détaillé et un site Web, avec contribution à la recherche, rédaction, mise en page, et développement web.
+                </p>
             </a>
         </div>
-
-        <!-- Bouton pour afficher/cacher les projets SAE 2 -->
-        <button onclick="toggleProjects('sae2', this)">Afficher les projets SAE 2</button>
 
         <!-- Carte Projet SAE 2 -->
         <div class="card sae2" style="display: none;">
             <a href="projets/SAE2/Backgammon.html">
                 <img src="assets/images/imageBackgammon.png" alt="Projet 6">
                 <h3>Backgammon (SAE 2.01 - SAE 2.02 - SAE 2.06)</h3>
-                <p>Technologies : Java, Framework Java (JavaFX)</p>
+                <p>Technologies : Java, Framework Java (JavaFX)
+                    <br><br>Développement d'un jeu de backgammon en Java avec IA en suivant le modèle MVC, impliquant la gestion des tâches en groupe, l'implémentation des IA, et la rédaction du rapport, malgré des défis liés à l'absence d'un membre clé.
+                </p>
             </a>
         </div>
 
@@ -163,56 +209,53 @@
             <a href="projets/SAE2/Ecommerce.html">
                 <img src="assets/images/imageSiteECommerce.png" alt="Projet 7">
                 <h3>Site de e-commerce (SAE 2.03 - SAE 2.04 - SAE 2.05)</h3>
-                <p>Technologies : SQL, Flask</p>
+                <p>Technologies : SQL, Flask
+                    <br><br>Développement d'un site de e-commerce avec gestion des notes et commentaires, création d'une machine virtuelle, rédaction de rapports de gestion, et présentation orale en anglais, tout en surmontant des défis liés à la complexité et aux imprévus.
+                </p>
             </a>
         </div>
 
-        <!-- Bouton pour afficher/cacher les projets SAE 3 -->
-        <button onclick="toggleProjects('sae3', this)">Afficher les projets SAE 3</button>
 
         <!-- Carte Projet SAE 3 -->
         <div class="card sae3" style="display: none;">
             <a href="projets/SAE3/DeveloppementApplication.html">
                 <img src="assets/images/SiteWeb.png" alt="Projet 8">
                 <h3>Développement d'application (SAE 3.01)</h3>
-                <p>Technologies : VueJS, JavaScript, PostgreSQL, NodeJS</p>
+                <p>Technologies : VueJS, JavaScript, PostgreSQL, NodeJS
+                    <br><br>Développement d'un site administratif pour le FIMU en méthode agile, incluant la gestion de données, la création de modèles et de contrôleurs, et la contribution aux maquettes et au code, tout en améliorant mes compétences en gestion de projet et en développement d'applications.
+                </p>
             </a>
         </div>
-
-        <!-- Bouton pour afficher/cacher les projets SAE 4 -->
-        <button onclick="toggleProjects('sae4', this)">Afficher les projets SAE 4</button>
 
         <div class="card sae4" style="display: none;">
             <a href="projets/SAE4/Suite.html">
                 <img src="assets/images/imageApplication.png" alt="Projet 9">
                 <h3>Suite du développement d'application (SAE 3.01)</h3>
-                <p>Technologies : Kotlin</p>
+                <p>Technologies : Kotlin
+                    <br><br>Développement d'une application mobile pour le FIMU, intégrant une API pour consulter les informations des groupes, une carte interactive, et un planning, avec une contribution à la création des maquettes, au développement en Kotlin, et à l'optimisation des performances.
+                </p>
             </a>
         </div>
-
-        <!-- Bouton pour afficher/cacher les projets SAE 5 -->
-        <button onclick="toggleProjects('sae5', this)">Afficher les projets SAE 5</button>
 
         <div class="card sae5" style="display: none;">
             <a href="projets/SAE5/index.html">
-                <img src="assets/images/MCD.png" alt="Projet 10">
+                <img src="assets/images/imageSAE5.png" alt="Projet 10">
                 <h3>Titre SAE (SAE 5.0)</h3>
-                <p>Technologies : </p>
+                <p>Technologies : Quasar, VueJS, Arduino, MTCNN
+                    <br><br>Développement d'une application mobile en Quasar pour surveiller la qualité de l'air en salle de classe, avec intégration de capteurs via Arduino, traitement d'images pour le comptage de personnes, et création de connexions entre les différents systèmes pour une gestion efficace des données.
+                </p>
             </a>
         </div>
-
-        <!-- Bouton pour afficher/cacher les projets SAE 6 -->
-        <button onclick="toggleProjects('sae6', this)">Afficher les projets SAE 6 (stage)</button>
 
         <div class="card sae6" style="display: none;">
             <a href="projets/stage/index.html">
-                <img src="assets/images/MCD.png" alt="Projet 10">
+                <img src="assets/images/" alt="Projet 10">
                 <h3>Titre SAE (SAE 5.0)</h3>
-                <p>Technologies : </p>
+                <p>Technologies : 
+                    <br><br>
+                </p>
             </a>
         </div>
-
-
     </section>
 
     <script>
@@ -238,7 +281,7 @@
                 sae3: "SAE 3",
                 sae4: "SAE 4",
                 sae5: "SAE 5",
-                sae6: "SAE 6 (stage)" // Ajout de (stage) pour le bouton 6
+                sae6: "SAE 6 (stage)"
             };
 
             // Modification du texte du bouton
@@ -251,4 +294,5 @@
     </script>
 
 </body>
+
 </html>
